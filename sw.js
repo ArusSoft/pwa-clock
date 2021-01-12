@@ -1,7 +1,7 @@
 const APP_PREFIX = "pwa_clock";
 const VERSION = "v21.01.12";
 const CACHE_NAME = APP_PREFIX + "_" + VERSION;
-const URLS = ["/pwa-clock/", "/pwa-clock/index.html"];
+const URLS = ["/pwa-clock/", "/pwa-clock/index.html", "/pwa-clock/font/Roboto-Medium.ttf"];
 
 self.addEventListener("fetch", function (e) {
   console.log("fetch request : " + e.request.url);
