@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Clock</title>
+    <link rel="canonical" href="https://arussoft.github.io/pwa-clock/" />
+    <meta charset="utf-8" />
+    <link rel="manifest" href="/pwa-clock/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/pwa-clock/images/icon.svg" />
+    <style type="text/css">
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+
+        background-color: black;
+      }
+      text {
+        fill: chartreuse;
+      }
+    </style>
+  </head>
+  <body>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="100%"
+      height="100%"
+      viewBox="0 0 75 75"
+    >
+      <text x="0" y="50%">
+        <tspan id="hour">hh</tspan>
+        <tspan class="delimiter">:</tspan>
+        <tspan id="minute">mm</tspan>
+        <tspan class="delimiter">:</tspan>
+        <tspan id="second">ss</tspan>
+      </text>
+    </svg>
+  </body>
+  <script>
+    const hourEl = document.getElementById("hour");
+    const minuteEl = document.getElementById("minute");
+    const secondEl = document.getElementById("second");
+
+    const updateTime = () => {
+      const now = new Date();
+      const hour = now.getHours();
+      const minute = String(now.getMinutes()).padStart(2, "0");
+      const second = String(now.getSeconds()).padStart(2, "0");
+
+      hourEl.textContent = hour;
+      minuteEl.textContent = minute;
+      secondEl.textContent = second;
+    };
+
+    updateTime();
+
+    setInterval(() => {
+      updateTime();
+    }, 1000);
+  </script>
+  <script>
+    window.addEventListener("load", () => {
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/pwa-clock/sw.js", {
+          scope: "/pwa-clock/",
+        });
+      }
+    });
+  </script>
+</html>
