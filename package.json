@@ -1,0 +1,27 @@
+{
+  "name": "pwa-clock",
+  "version": "21.01.12",
+  "description": "\"Simple digital clock PWA\"",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArusSoft/pwa-clock.git"
+  },
+  "keywords": [
+    "clock",
+    "time"
+  ],
+  "author": "Alex Arus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ArusSoft/pwa-clock/issues"
+  },
+  "homepage": "https://github.com/ArusSoft/pwa-clock#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "serve": "^11.3.2"
+  }
+}

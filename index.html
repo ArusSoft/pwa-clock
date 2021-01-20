@@ -21,8 +21,13 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
 
         background-color: black;
+      }
+      svg {
+        width: 95%;
+        height: 95%;
       }
       text {
         fill: chartreuse;
@@ -34,7 +39,7 @@
     </style>
   </head>
   <body>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 13">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 13">
       <text y="90%" textLength="100%" lengthAdjust="spacingAndGlyphs">
         <tspan id="hour">hh</tspan>
         <tspan class="delimiter">:</tspan>
@@ -42,12 +47,14 @@
         <tspan class="delimiter">:</tspan>
         <tspan id="second">ss</tspan>
       </text>
+      <text id="date" dy="20" dx="35" font-size="8"/>
     </svg>
   </body>
   <script>
     const hourEl = document.getElementById("hour");
     const minuteEl = document.getElementById("minute");
     const secondEl = document.getElementById("second");
+    const dateEl = document.getElementById("date")
 
     const updateTime = () => {
       const now = new Date();
@@ -58,6 +65,8 @@
       hourEl.textContent = hour;
       minuteEl.textContent = minute;
       secondEl.textContent = second;
+
+      dateEl.textContent = now.toLocaleDateString();
     };
 
     updateTime();
