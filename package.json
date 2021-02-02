@@ -1,7 +1,7 @@
 {
   "name": "pwa-clock",
   "version": "21.1.20",
-  "description": "\"Simple digital clock PWA\"",
+  "description": "Simple digital clock PWA",
   "main": "index.html",
   "scripts": {
     "start": "serve"
